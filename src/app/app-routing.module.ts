@@ -8,6 +8,7 @@ import {PageNotFoundComponent} from 'src/app/components/page-not-found/page-not-
 
 const routes: Routes = [
   {path:'', component:LandingPageComponent},
+  {path:'home', component:LandingPageComponent},
   {path:'login', component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'**',component:PageNotFoundComponent}  
