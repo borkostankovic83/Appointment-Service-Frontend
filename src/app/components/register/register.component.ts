@@ -13,13 +13,4 @@ export class RegisterComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitRegistrationData(){
-    //Registration validation
-
-
-
-    //Routing toward login page
-    this.router.navigate(['/login']);
-  }
-
 }

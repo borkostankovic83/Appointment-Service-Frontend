@@ -1,12 +1,29 @@
-<h2>The page for the login</h2>
 
-<p> <a href="">Functional testing requirements for the login </a> </p>
+<div class="container">
+    <div class="row">
+      <div class="col align-self-center">
+        <form>
+            <div class="form-group ">
+            <label  class="col-sm-5 ">Email</label>
+            <div class="col-sm-5">
+                <input type="email" class="form-control" id="inputEmail3">
+            </div>
+            </div>
 
-<form>
-    <input type="text" [(ngModel)]="userType" name="userType" placeholder="business/customer"> 
-    <input type="submit" value="After validation the use of valid creadentials, 
-    routing toward the business owner's dashboard,
-    or the customer's dashboard."
-    (click)="submitLoginData()"/>
+            <div class="form-group ">
+            <label  class="col-sm-5 ">Password</label>
+            <div class="col-sm-5">
+                <input type="password" class="form-control" id="inputPassword3">
+            </div>
+            </div>
 
-</form>
+            <div class="form-group ">
+            <div class="col-sm-5">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+            </div>
+            </div>
+        </form>
+    </div>
+    </div>
+</div> 
+

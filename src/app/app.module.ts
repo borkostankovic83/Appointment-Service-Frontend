@@ -4,6 +4,7 @@ import {FormsModule} from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {NavbarComponent} from 'src/app/components/navbar/navbar.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
@@ -16,6 +17,7 @@ import { BusinessScheduleDisplayComponent } from './components/business-schedule
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     LandingPageComponent,
     LoginComponent,
     RegisterComponent,
