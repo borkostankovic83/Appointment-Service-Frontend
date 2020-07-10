@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  userType = "";
+
   constructor(private router:Router) { }
 
   ngOnInit(): void {
@@ -18,7 +20,9 @@ export class LoginComponent implements OnInit {
 
 
     // Routing toward the business owner/customer dashboard page
-
+    console.log("this.userType: ",this.userType);
+    if (this.userType === "business") this.router.navigate(['business']);
+    else this.router.navigate(['']);    
 
   }
 }
