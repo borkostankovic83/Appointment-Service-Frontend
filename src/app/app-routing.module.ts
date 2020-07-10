@@ -5,6 +5,7 @@ import {LoginComponent} from 'src/app/components/login/login.component';
 import {RegisterComponent} from 'src/app/components/register/register.component';
 import {BusinessScheduleDisplayComponent} from 'src/app/components/business-schedule-display/business-schedule-display.component';
 import {PageNotFoundComponent} from 'src/app/components/page-not-found/page-not-found.component';
+import { BusinessAppointmentSettingsComponent } from './components/business-appointment-settings/business-appointment-settings.component';
 
 
 const routes: Routes = [
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path:'login', component:LoginComponent},
   {path:'register',component:RegisterComponent},
   {path:'business',component:BusinessScheduleDisplayComponent},
+  {path:'appointmentSettings',component:BusinessAppointmentSettingsComponent},
   {path:'**',component:PageNotFoundComponent}  
 ];
 

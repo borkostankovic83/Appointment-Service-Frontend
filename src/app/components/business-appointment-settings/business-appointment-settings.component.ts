@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BusinessAppointmentSettingsComponent implements OnInit {
 
+  Appointment_MaxDaysAhead:string;
+  Appointment_Duration:string;
+
   constructor() { }
 
   ngOnInit(): void {
