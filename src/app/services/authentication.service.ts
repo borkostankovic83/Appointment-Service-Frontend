@@ -36,5 +36,7 @@ export class AuthenticationService {
 
   logOut() {
     sessionStorage.removeItem('username')
+    let user
+    return (user === null)
   }
 }

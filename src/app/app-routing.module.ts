@@ -17,7 +17,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'logout', component: LogoutComponent, canActivate:[AuthGaurdService]},
   {path:'business',component:BusinessScheduleDisplayComponent},
-  {path:'user/profile', component:UserProfileComponent},
+  {path:'user/profile', component:UserProfileComponent, canActivate:[AuthGaurdService]},
   {path:'**',component:PageNotFoundComponent}  
 ];
 
