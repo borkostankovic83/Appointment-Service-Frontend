@@ -13,12 +13,5 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submitLoginData(){
-    // Credentials validation
-
-
-    // Routing toward the business owner/customer dashboard page
-
-
-  }
+  
 }

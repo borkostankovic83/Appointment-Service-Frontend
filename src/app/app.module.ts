@@ -10,22 +10,29 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { BusinessAppointmentSettingsComponent } from './components/business-appointment-settings/business-appointment-settings.component';
+import { BusinessScheduleEditionDailyComponent } from './components/business-schedule-edition-daily/business-schedule-edition-daily.component';
+import { BusinessScheduleEditionWeeklyComponent } from './components/business-schedule-edition-weekly/business-schedule-edition-weekly.component';
+import { BusinessScheduleDisplayComponent } from './components/business-schedule-display/business-schedule-display.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     LandingPageComponent,
     LoginComponent,
     RegisterComponent,
     PageNotFoundComponent,
-    NavbarComponent
+    BusinessAppointmentSettingsComponent,
+    BusinessScheduleEditionDailyComponent,
+    BusinessScheduleEditionWeeklyComponent,
+    BusinessScheduleDisplayComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]
