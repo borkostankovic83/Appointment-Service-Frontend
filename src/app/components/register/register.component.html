@@ -1,17 +1,13 @@
-
-<!-- <h2>The page for the registration</h2>
-<p>First name, Last name, Email, (username?), Password Declaration according to 
-    functional requirements</p>
-
-<p> <a href="">Functional testing requirements for the registration </a> </p>
-
-<input type="submit" value="After all constraints area validated, and 
-registration is successful, routing toward the login page" 
-(click)=submitRegistrationData()> -->
-
-
 <div class="container" >
-<form #form="ngForm" >
+    <div div class="row"  *ngIf="showMsg">
+      <div class="col-lg-12">
+        <p class="alert alert-primary">
+          <strong>Registration Success!</strong> You can login now!
+        </p>
+      </div>
+    </div>
+
+<form #f="ngForm" (ngSubmit)="registerUser(f)">
     
     <!-- Icon -->
     <div class="form-group">
@@ -20,23 +16,23 @@ registration is successful, routing toward the login page"
     
     <div class="form-group">
       <small><label>First Name</label></small>
-      <input type="text" class="form-control" placeholder="Enter First Name" name="first_name"
+      <input type="text" class="form-control" placeholder="Enter First Name" name="firstName"
        ngModel required #first_name="ngModel" 
        [class.is-invalid]="first_name.invalid && first_name.touched">
-       <small class="text-danger" [class.d-none]="first_name.valid || first_name.untouched">Name is required field</small>  
+       <small class="text-danger" [class.d-none]="first_name.valid || first_name.untouched">First name is required field</small>  
     </div>
   
     <div class="form-group">
       <small><label>Last Name</label></small>
-      <input type="text" class="form-control" placeholder="Enter Last Name" name="last_name"
+      <input type="text" class="form-control" placeholder="Enter Last Name" name="lastName"
        ngModel required #last_name="ngModel" 
        [class.is-invalid]="last_name.invalid && last_name.touched">
-       <small class="text-danger" [class.d-none]="last_name.valid || last_name.untouched">Name is required field</small>  
+       <small class="text-danger" [class.d-none]="last_name.valid || last_name.untouched">Last name is required field</small>  
     </div>
   
     <div class="form-group">
-      <small><label>Email</label></small>
-      <!-- <small [class.text-danger]="msg.status==500" >{{msg.message}}</small> -->
+      <small><label>Email</label></small><br>
+      <small [class.text-danger]="msg.status==500" >{{msg.message}}</small>
       <input type="email" class="form-control" id="email" placeholder="Enter Email" name="email"
        ngModel required #email="ngModel" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
        [class.is-invalid]="email.invalid && email.touched">
@@ -60,6 +56,6 @@ registration is successful, routing toward the login page"
       <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Confirm password must match password</small>
     </div>
      
-    <button [disabled]="form.form.invalid" type="submit" class="btn btn-success" >Register</button>
+    <button [disabled]="f.form.invalid" type="submit" class="btn btn-success" >Register</button>
   </form>
 </div>

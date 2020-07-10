@@ -14,6 +14,8 @@ import { BusinessAppointmentSettingsComponent } from './components/business-appo
 import { BusinessScheduleEditionDailyComponent } from './components/business-schedule-edition-daily/business-schedule-edition-daily.component';
 import { BusinessScheduleEditionWeeklyComponent } from './components/business-schedule-edition-weekly/business-schedule-edition-weekly.component';
 import { BusinessScheduleDisplayComponent } from './components/business-schedule-display/business-schedule-display.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { BusinessScheduleDisplayComponent } from './components/business-schedule
     BusinessAppointmentSettingsComponent,
     BusinessScheduleEditionDailyComponent,
     BusinessScheduleEditionWeeklyComponent,
-    BusinessScheduleDisplayComponent
+    BusinessScheduleDisplayComponent,
+    LogoutComponent,
+    UserProfileComponent
   ],
   imports: [
     BrowserModule,
