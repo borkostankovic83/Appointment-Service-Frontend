@@ -1,1 +1,65 @@
-<p>business-appointment-settings works!</p>
+<h2>Appointments Settings</h2>
+
+<form>
+    <label for="Appointment_MaxDaysAhead"><h4><ul><li>Maximum number of days ahead an appointment can be made 
+        (between 0 and 365):</li></ul></h4>
+    </label>
+    <br>
+    <input class="setting-input" id="Appointment_MaxDaysAhead" [(ngModel)]="Appointment_MaxDaysAhead" name="Appointment_MaxDaysAhead" 
+    type="number" min="0" max="365" step="1" placeholder="365">
+    
+    <br>
+    <br>
+    <!-- Time increment for the daily appointments -->
+    <label  for="AppointmentTimeIncrement"><h4><ul><li>The time an appointment lasts (30mn, 45 mn, 60mn):</li></ul></h4><h3></h3></label>
+    <br>
+    <input class="setting-input" id="Appointment_Duration"  [(ngModel)]="Appointment_Duration"
+     name="Appointment_Duration" type="number" min="15" max="60" step="15" placeholder="60">
+    <br>
+    <br>
+
+    <label  for="AppointmentTimeIncrement"><h4><ul><li>Selection of the daily availability:</li></ul></h4><h3></h3></label>
+    <br>    
+    <!-- Input type="time" is not supported by Safari-->
+    <!--https://flatpickr.js.org/examples/#time-picker-->
+    <span class="setting-day">Mondays: </span> <input id="monday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
+    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+    <br>
+    <span class="setting-day">Tuesdays: </span> <input id="tuesday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
+    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+    <br>
+    <span class="setting-day">Wednesdays: </span> <input id="wednesday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
+    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+    <br>
+    <span class="setting-day">Thursdays: </span> <input id="thursday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
+    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+    <br>
+    <span class="setting-day">Fridays: </span> <input id="friday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
+    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+    <br>
+    <span class="setting-day">Saturdays: </span> <input id="saturday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
+    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+    <br>
+    <span class="setting-day">Sundays: </span> <input id="sunday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
+    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+
+
+    
+
+
+
+</form>
+
+
+
+<br><br><br>
+<blockquote>Time selection code by <a href="https://flatpickr.js.org/">FlatPickr</a> is released under the 
+<a href="https://opensource.org/licenses/MIT">MIT license.</a></blockquote>
+<!--
+Copyright <YEAR> <COPYRIGHT HOLDER>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+-->

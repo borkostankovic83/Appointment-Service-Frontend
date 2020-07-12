@@ -1,0 +1,20 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.setting-input{    
+    
+}
+
+.setting-day
+{
+    margin-left: 2em;
+    width: 8em;
+    box-sizing: border-box;
+    display: inline-block;
+}
+
+#Appointment_MaxDaysAhead{
+    
+}
+
