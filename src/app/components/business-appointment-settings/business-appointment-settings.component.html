@@ -11,41 +11,169 @@
     <br>
     <br>
     <!-- Time increment for the daily appointments -->
-    <label  for="AppointmentTimeIncrement"><h4><ul><li>The time an appointment lasts (30mn, 45 mn, 60mn):</li></ul></h4><h3></h3></label>
+    <label  for="AppointmentTimeIncrement"><h4><ul><li>Time an appointment lasts (30mn, 45 mn, 60mn):</li></ul></h4><h3></h3></label>
     <br>
     <input class="setting-input" id="Appointment_Duration"  [(ngModel)]="Appointment_Duration"
      name="Appointment_Duration" type="number" min="15" max="60" step="15" placeholder="60">
     <br>
     <br>
 
-    <label  for="AppointmentTimeIncrement"><h4><ul><li>Selection of the daily availability:</li></ul></h4><h3></h3></label>
+    <label  for="AppointmentTimeIncrement"><h4><ul><li>Daily availability:</li></ul></h4><h3></h3></label>
     <br>    
     <!-- Input type="time" is not supported by Safari-->
     <!--https://flatpickr.js.org/examples/#time-picker-->
-    <span class="setting-day">Mondays: </span> <input id="monday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
-    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
-    <br>
-    <span class="setting-day">Tuesdays: </span> <input id="tuesday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
-    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
-    <br>
-    <span class="setting-day">Wednesdays: </span> <input id="wednesday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
-    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
-    <br>
-    <span class="setting-day">Thursdays: </span> <input id="thursday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
-    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
-    <br>
-    <span class="setting-day">Fridays: </span> <input id="friday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
-    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
-    <br>
-    <span class="setting-day">Saturdays: </span> <input id="saturday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
-    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
-    <br>
-    <span class="setting-day">Sundays: </span> <input id="sunday-schedule" class="flatpickr flatpick-input setting-input" type="text" 
-    placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
-
-
+    <!--Use of a table for web accessibility -->
+    <table>
+        <caption>Please select the morning and afternoon availability</caption>
+        <tr>
+            <th>Day</th>
+            <th colspan="2">Morning</th>
+            <th colspan="2">Afternoon</th>
+        </tr>
+        <tr>
+            <td>Mondays:</td>
+            <td><input id="monday_morning_schedule_begin" [(ngModel)]="monday_morning_schedule_begin" 
+                name="monday_morning_schedule_begin"
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="monday-morning-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="monday-afternoon-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td>
+                <input id="monday-afternoon-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+        </tr>
+        <tr>
+            <td>Tuesdays:</td>
+            <td><input id="tuesday-morning-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="tuesday-morning-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="tuesday-afternoon-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td>
+                <input id="tuesday-afternoon-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+        </tr>
+        <tr>
+            <td>Wednesdays:</td>
+            <td><input id="wednesday-morning-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="wednesday-morning-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="wednesday-afternoon-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td>
+                <input id="wednesday-afternoon-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+        </tr>
+        <tr>
+            <td>Thursdays:</td>
+            <td><input id="thursday-morning-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="thursday-morning-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="thursday-afternoon-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td>
+                <input id="thursday-afternoon-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+        </tr>
+        <tr>
+            <td>Fridays:</td>
+            <td><input id="friday-morning-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="friday-morning-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="friday-afternoon-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td>
+                <input id="friday-afternoon-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+        </tr>
+        <tr>
+            <td>Saturdays:</td>
+            <td><input id="saturday-morning-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="saturday-morning-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="saturday-afternoon-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td>
+                <input id="saturday-afternoon-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+        </tr>
+        <tr>
+            <td>Sundays:</td>
+            <td><input id="sunday-morning-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="sunday-morning-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td><input id="sunday-afternoon-schedule-begin" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+            <td>
+                <input id="sunday-afternoon-schedule-end" 
+                class="flatpickr flatpick-input setting-input day-input" 
+                type="text" placeholder="Please, select a time." data-id="timePicker" readonly="readonly">
+            </td>
+        </tr>
+    </table>
+    {{monday_morning_schedule_begin}}
     
-
 
 
 </form>
