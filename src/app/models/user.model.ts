@@ -6,6 +6,7 @@ export class User {
     first_name:string;
     last_name:string;
     password:string;
+    role:string;
     registration_date:Time;
 
     constructor(){}

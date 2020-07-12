@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
+import { CurrentUserService } from 'src/app/services/current-user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,12 +8,32 @@ import { AuthenticationService } from 'src/app/services/authentication.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  
-  constructor(
-    public loginService:AuthenticationService
-    ) { }
+   
+  user : any;
 
-  ngOnInit(): void {
+  constructor(
+    public loginService:AuthenticationService,
+    public currentUserService:CurrentUserService
+        ) { }
+
+
+
+ ngOnInit() {
+  this.currentUserService.getUserData().subscribe((data) => {
+    this.user = data;
+ })
   }
 
+  role(){
+    this.currentUserService.getUserData().subscribe((data) => {
+      this.user = data;
+      return data;
+   })
+    
+  }
+
+
 }
+
+
+

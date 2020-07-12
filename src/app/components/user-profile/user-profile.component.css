@@ -1,0 +1,8 @@
+button {
+    margin: 5px 5px 15px 5px;
+    height: 62px;
+    width: 82px;
+}
+button:hover {
+    background-color: #ab47bc;
+}

@@ -15,7 +15,7 @@
         <li class="nav-item" *ngIf="loginService.isUserLoggedIn() == false" [routerLinkActive]="['active']">
           <a class="nav-link" [routerLink]="['login']">Login</a>
         </li>
-        <li class="nav-item" *ngIf="loginService.isUserLoggedIn() == true" [routerLinkActive]="['active']">
+        <li class="nav-item" *ngIf="loginService.isUserLoggedIn()" [routerLinkActive]="['active']">
           <a class="nav-link" [routerLink]="['user/profile']">Profile</a>
         </li>
       </ul>
