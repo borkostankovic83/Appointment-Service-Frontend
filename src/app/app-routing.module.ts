@@ -9,6 +9,8 @@ import { BusinessAppointmentSettingsComponent } from './components/business-appo
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGaurdService } from './services/auth-gaurd.service';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { RoleGuardService } from './services/role-guard.service';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 
 const routes: Routes = [
@@ -20,6 +22,7 @@ const routes: Routes = [
   {path:'business',component:BusinessScheduleDisplayComponent},
   {path:'appointmentSettings',component:BusinessAppointmentSettingsComponent},
   {path:'user/profile', component:UserProfileComponent, canActivate:[AuthGaurdService]},
+  {path:'admin/panel', component:AdminPanelComponent, data:{role: 'Admin'}, canActivate:[RoleGuardService]},
   {path:'**',component:PageNotFoundComponent}  
 ];
 

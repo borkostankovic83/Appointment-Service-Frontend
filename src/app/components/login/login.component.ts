@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { User } from 'src/app/models/user.model';
+import { CurrentUserService } from 'src/app/services/current-user.service';
 
 @Component({
   selector: 'app-login',
@@ -15,20 +16,23 @@ export class LoginComponent implements OnInit {
   invalidLogin = false;
   msg = '';
   user = new User();
+  currentUser : any;
 
   constructor(
     private router: Router,
-    private loginservice: AuthenticationService
+    private loginservice: AuthenticationService,
+    private service: CurrentUserService,
     ) { }
 
-  ngOnInit(): void {
+  ngOnInit(){
+
   }
 
   loginUser(){
-    this.loginservice.logginFromRemote(this.user).subscribe(
+    this.loginservice.loggin(this.user).subscribe(
       data => {
-        console.log("response recived"),
-        this.router.navigate(['/user/profile'])
+        console.log("response recived"); 
+        this.router.navigate(['user/profile']);
       },
       error => {
         console.log("exception ocured"),

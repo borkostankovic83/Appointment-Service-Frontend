@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentUserService } from 'src/app/services/current-user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-profile',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserProfileComponent implements OnInit {
 
-  constructor() { }
+  user : any;
 
-  ngOnInit(): void {
+  constructor(
+    public currentUserService:CurrentUserService,
+    public router:Router
+    ) { }
+
+  ngOnInit() {
+    this.currentUserService.getUserData().subscribe((data) => {
+      this.user = data;
+   })
   }
-
+  gotoAdminPanel() {
+    this.router.navigate(['admin/panel']);
+  }
+  
 }

@@ -16,6 +16,7 @@ import { BusinessScheduleEditionWeeklyComponent } from './components/business-sc
 import { BusinessScheduleDisplayComponent } from './components/business-schedule-display/business-schedule-display.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
     BusinessScheduleEditionWeeklyComponent,
     BusinessScheduleDisplayComponent,
     LogoutComponent,
-    UserProfileComponent
+    UserProfileComponent,
+    AdminPanelComponent,
   ],
   imports: [
     BrowserModule,
