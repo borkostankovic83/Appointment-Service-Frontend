@@ -10,7 +10,9 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGaurdService } from './services/auth-gaurd.service';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { RoleGuardService } from './services/role-guard.service';
-import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { VetDashboardComponent } from './components/vet-dashboard/vet-dashboard.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
   {path:'business',component:BusinessScheduleDisplayComponent},
   {path:'appointmentSettings',component:BusinessAppointmentSettingsComponent},
   {path:'user/profile', component:UserProfileComponent, canActivate:[AuthGaurdService]},
-  {path:'admin/panel', component:AdminPanelComponent, data:{role: 'Admin'}, canActivate:[RoleGuardService]},
+  {path:'user/dashboard', component:UserDashboardComponent, canActivate:[AuthGaurdService]},
+  {path:'vet/dashboard', component:VetDashboardComponent, canActivate:[AuthGaurdService]},
+  {path:'admin/dashboard', component:AdminDashboardComponent, data:{role: 'Admin'}, canActivate:[RoleGuardService]},
   {path:'**',component:PageNotFoundComponent}  
 ];
 

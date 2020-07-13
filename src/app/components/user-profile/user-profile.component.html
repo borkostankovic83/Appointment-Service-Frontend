@@ -1,4 +1,4 @@
-<div [ngStyle]="{'background-color': user.role == ['Vet'] ? 'LightCyan' : 'LemonChiffon' }">
+<!-- <div [ngStyle]="{'background-color': user.role == ['Vet'] ? 'LightCyan' : 'LemonChiffon' }">
     <div class="container" >
         <div class="row">
             <div class="col-sm">
@@ -7,11 +7,138 @@
                 <p>{{user.lastName}}</p>
                 <p>{{user.email}}</p>
                 <p>{{user.role}}</p>
-                <button class="btn btn-primary" *ngIf="user.role == ['Vet'] || user.role == ['Admin']">Vet Panel</button>
-                <button class="btn btn-success" *ngIf="user.role == ['User'] || user.role == ['Admin']">User Panel</button>
-                <button class="btn btn-danger" *ngIf="user.role == ['Admin']" (click)="gotoAdminPanel()">Admin Panel</button>
+                <button class="btn btn-primary" *ngIf="user.role == ['Vet'] || user.role == ['Admin']" (click)="gotoVetDashboard()">Vet Dashboard</button>
+                <button class="btn btn-success" *ngIf="user.role == ['User'] || user.role == ['Admin']" (click)="gotoUserDashboard()">User Dashboard</button>
+                <button class="btn btn-danger" *ngIf="user.role == ['Admin']" (click)="gotoAdminDashboard()">Admin Dashboard</button>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="row my-2">
+        <div class="col-lg-4 order-lg-1 text-center">
+            <img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            <h6 class="mt-2">Upload a different photo</h6>
+            <label class="custom-file">
+                <input type="file" id="file" class="custom-file-input">
+                <span class="custom-file-control">Choose file</span>
+            </label>
+        </div>
+        <div class="col-lg-8 order-lg-2">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a href="" data-target="#profile" data-toggle="tab" class="nav-link active">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#messages" data-toggle="tab" class="nav-link">Messages</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#dashboard" data-toggle="tab" class="nav-link">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a href="" data-target="#edit" data-toggle="tab" class="nav-link">Edit Profile</a>
+                </li>
+            </ul>
+            <div class="tab-content py-4">
+                <div class="tab-pane active" id="profile">
+                    <h1 class="mb-3">Profile</h1>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <small>First Name: <h5>{{user.firstName}}</h5></small>
+                            <small>Last Name: <h5>{{user.lastName}}</h5></small>
+                            <small>Email: <h5>{{user.email}}</h5></small>
+
+                        
+                        </div>
+                        <div class="col-md-6">
+                            <h3>Pets</h3>
+                        </div>
+                        
+                    </div>
+                    <!--/row-->
+                </div>
+                <div class="tab-pane" id="messages">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                    </div>
+                    <table class="table table-hover table-striped">
+                        <tbody>                                    
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">3 hrs ago</span> Here is your a link to the latest summary report from the..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">Yesterday</span> There has been a request on your account since that was..
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/10</span> Porttitor vitae ultrices quis, dapibus id dolor. Morbi venenatis lacinia rhoncus. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/4</span> Vestibulum tincidunt ullamcorper eros eget luctus. 
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                   <span class="float-right font-weight-bold">9/4</span> Maxamillion ais the fix for tibulum tincidunt ullamcorper eros. 
+                                </td>
+                            </tr>
+                        </tbody> 
+                    </table>
+                <!-- Dashboard here -->
+                </div> <div class="tab-pane" id="dashboard">
+                    <div *ngIf="user.role == ['Vet']"><app-vet-dashboard></app-vet-dashboard></div>
+                    <div *ngIf="user.role == ['User']"><app-user-dashboard></app-user-dashboard></div>
+                    <div *ngIf="user.role == ['Admin']"><app-admin-dashboard></app-admin-dashboard></div>
+                </div>
+                <div class="tab-pane" id="edit">
+                    <form role="form">
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">First name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Jane">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="text" value="Bishop">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="email" value="email@gmail.com">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label">Confirm password</label>
+                            <div class="col-lg-9">
+                                <input class="form-control" type="password" value="11111122333">
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label class="col-lg-3 col-form-label form-control-label"></label>
+                            <div class="col-lg-9">
+                                <input type="reset" class="btn btn-secondary" value="Cancel">
+                                <input type="button" class="btn btn-primary" value="Save Changes">
+                            </div>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
 </div>
-

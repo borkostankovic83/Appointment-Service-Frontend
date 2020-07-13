@@ -16,7 +16,9 @@ import { BusinessScheduleEditionWeeklyComponent } from './components/business-sc
 import { BusinessScheduleDisplayComponent } from './components/business-schedule-display/business-schedule-display.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
-import { AdminPanelComponent } from './components/admin-panel/admin-panel.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
+import { VetDashboardComponent } from './components/vet-dashboard/vet-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,9 @@ import { AdminPanelComponent } from './components/admin-panel/admin-panel.compon
     BusinessScheduleDisplayComponent,
     LogoutComponent,
     UserProfileComponent,
-    AdminPanelComponent,
+    AdminDashboardComponent,
+    UserDashboardComponent,
+    VetDashboardComponent,
   ],
   imports: [
     BrowserModule,

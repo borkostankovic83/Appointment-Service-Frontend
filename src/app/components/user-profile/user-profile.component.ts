@@ -21,8 +21,14 @@ export class UserProfileComponent implements OnInit {
       this.user = data;
    })
   }
-  gotoAdminPanel() {
-    this.router.navigate(['admin/panel']);
+  gotoUserDashboard() {
+    this.router.navigate(['user/dashboard']);
+  }
+  gotoVetDashboard() {
+    this.router.navigate(['vet/dashboard']);
+  }
+  gotoAdminDashboard() {
+    this.router.navigate(['admin/dashboard']);
   }
   
 }
