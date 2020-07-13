@@ -22,7 +22,7 @@
           <a class="nav-link" [routerLink]="['profile']">Profile</a>
         </li>
         <li class="nav-item" *ngIf="loginService.isUserLoggedIn()" [routerLinkActive]="['active']">
-          <a class="nav-link" [routerLink]="['profile/edit']">Edit Profile</a>
+          <a class="nav-link" [routerLink]="['edit/profile']">Edit Profile</a>
         </li>
       </ul>
       <ul class="navbar-nav">

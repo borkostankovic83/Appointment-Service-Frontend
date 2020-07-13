@@ -1,12 +1,7 @@
 <div class="container" >
-    <div div class="row"  *ngIf="showMsg">
-      <div class="col-lg-12">
-        <p class="alert alert-primary">
-          <strong>Registration Success!</strong> You can login now!
-        </p>
-      </div>
-    </div>
-
+  <div class="alert alert-primary alert-dismissable" *ngIf="showMsg">
+    <a class="panel-close close" data-dismiss="alert" style="cursor: pointer;">×</a>Update Success! <strong>Changes are saved!</strong>
+</div>
 <form #f="ngForm" (ngSubmit)="registerUser(f)">
     
     <!-- Icon -->

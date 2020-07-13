@@ -9,7 +9,7 @@
 <div class="col-lg-8 order-lg-2"> 
   <div class="tab-content py-4">
 <div class="alert alert-primary alert-dismissable" *ngIf="showMsg">
-    <a class="panel-close close" data-dismiss="alert">×</a>Update Success! <strong>Changes are saved!</strong>
+    <a class="panel-close close" data-dismiss="alert" style="cursor: pointer;">×</a>Update Success! <strong>Changes are saved!</strong>
 </div>
 <form #f="ngForm" (ngSubmit)="updateProfile(f.value)">
   <div class="form-group row">
@@ -55,7 +55,7 @@
         <label class="col-lg-3 col-form-label form-control-label"></label>
          <div class="col-lg-9">
             <input type="reset" (click)="reset()" class="btn btn-secondary" value="Reset">
-            <input [disabled]="f.form.invalid || f.form.untouched" style="margin-left: 10px;" type="submit" class="btn btn-primary" value="Save Changes">
+            <input [disabled]="f.form.invalid" style="margin-left: 10px;" type="submit" class="btn btn-primary" value="Save Changes">
         </div>
   </div>
 </form>

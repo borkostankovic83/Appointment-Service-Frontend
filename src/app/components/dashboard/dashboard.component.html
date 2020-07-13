@@ -21,6 +21,19 @@
                     
                 </div>
 
+                <!-- Dashboard here load depends of user role-->
+                <div class="tab-pane" id="appointmentSettings">
+                    <app-business-appointment-settings></app-business-appointment-settings>
+                </div>
+
+                <!-- Dashboard here load depends of user role-->
+                <div class="tab-pane" id="shedule">
+                    <app-business-schedule-display></app-business-schedule-display>
+                    <app-business-schedule-edition-daily></app-business-schedule-edition-daily>
+                    <app-business-schedule-edition-weekly></app-business-schedule-edition-weekly>
+                    
+                </div>
+
                 <!-- Make Appointment here load depends of user role-->
                 <div class="tab-pane" id="appointment">
                     <app-appointments></app-appointments>

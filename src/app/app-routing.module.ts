@@ -27,7 +27,7 @@ const routes: Routes = [
   {path:'business',component:BusinessScheduleDisplayComponent},
   {path:'appointmentSettings',component:BusinessAppointmentSettingsComponent},
   {path:'profile', component:UserProfileComponent, canActivate:[AuthGaurdService]},
-  {path:'profile/edit', component:EditUserComponent, canActivate:[AuthGaurdService]},
+  {path:'edit/profile', component:EditUserComponent, canActivate:[AuthGaurdService]},
   {path:'dashboard', component:DashboardComponent, canActivate:[AuthGaurdService]},
   {path:'make/appointmet', component:AppointmentsComponent, canActivate:[AuthGaurdService]},
   // {path:'user/dashboard', component:UserDashboardComponent, canActivate:[AuthGaurdService]},
