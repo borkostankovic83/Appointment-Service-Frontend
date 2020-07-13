@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
     this.loginservice.loggin(this.user).subscribe(
       data => {
         console.log("response recived"); 
-        this.router.navigate(['user/profile']);
+        this.router.navigate(['dashboard']);
       },
       error => {
         console.log("exception ocured"),

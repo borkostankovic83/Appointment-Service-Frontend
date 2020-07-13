@@ -45,4 +45,8 @@ export class EditUserComponent implements OnInit {
   toggle() {
     this.showPass = !this.showPass;
   }
+
+  reset() {
+    this.ngOnInit();
+  }
 }

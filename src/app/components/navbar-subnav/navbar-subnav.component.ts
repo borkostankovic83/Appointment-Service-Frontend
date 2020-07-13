@@ -3,25 +3,26 @@ import { CurrentUserService } from 'src/app/services/current-user.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  selector: 'app-navbar-subnav',
+  templateUrl: './navbar-subnav.component.html',
+  styleUrls: ['./navbar-subnav.component.css']
 })
-export class UserProfileComponent implements OnInit {
-
+export class NavbarSubnavComponent implements OnInit {
+  
   user : any;
-  showPass: boolean;
 
   constructor(
     public currentUserService:CurrentUserService,
-    public router:Router
+    public router:Router,
     ) { }
+
+    reload() {
+      this.router.navigate(['dashboard']);
+    }
 
   ngOnInit() {
     this.currentUserService.getUserData().subscribe((data) => {
       this.user = data;
    })
   }
-
-
 }

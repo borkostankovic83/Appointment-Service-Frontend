@@ -13,6 +13,9 @@ import { RoleGuardService } from './services/role-guard.service';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { VetDashboardComponent } from './components/vet-dashboard/vet-dashboard.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { AppointmentsComponent } from './components/appointments/appointments.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 
 const routes: Routes = [
@@ -23,10 +26,13 @@ const routes: Routes = [
   {path:'logout', component: LogoutComponent, canActivate:[AuthGaurdService]},
   {path:'business',component:BusinessScheduleDisplayComponent},
   {path:'appointmentSettings',component:BusinessAppointmentSettingsComponent},
-  {path:'user/profile', component:UserProfileComponent, canActivate:[AuthGaurdService]},
-  {path:'user/dashboard', component:UserDashboardComponent, canActivate:[AuthGaurdService]},
-  {path:'vet/dashboard', component:VetDashboardComponent, canActivate:[AuthGaurdService]},
-  {path:'admin/dashboard', component:AdminDashboardComponent, data:{role: 'Admin'}, canActivate:[RoleGuardService]},
+  {path:'profile', component:UserProfileComponent, canActivate:[AuthGaurdService]},
+  {path:'profile/edit', component:EditUserComponent, canActivate:[AuthGaurdService]},
+  {path:'dashboard', component:DashboardComponent, canActivate:[AuthGaurdService]},
+  {path:'make/appointmet', component:AppointmentsComponent, canActivate:[AuthGaurdService]},
+  // {path:'user/dashboard', component:UserDashboardComponent, canActivate:[AuthGaurdService]},
+  // {path:'vet/dashboard', component:VetDashboardComponent, canActivate:[AuthGaurdService]},
+  // {path:'admin/dashboard', component:AdminDashboardComponent, data:{role: 'Admin'}, canActivate:[RoleGuardService]},
   {path:'**',component:PageNotFoundComponent}  
 ];
 

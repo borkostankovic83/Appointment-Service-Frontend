@@ -1,52 +1,63 @@
-<div div class="row"  *ngIf="showMsg">
-                    <div class="col-lg-12">
-                      <p class="alert alert-primary">
-                        <strong>Update Success!</strong> Changes are saved!
-                      </p>
-                    </div>
-                  </div>
+<div class="container">
+  <div class="row my-2">
+    
+<div class="col-lg-4 text-center py-4">
+  <!-- profile pic load here from profile-picture component -->
+  <app-profile-picture></app-profile-picture>
+</div>
+
+<div class="col-lg-8 order-lg-2"> 
+  <div class="tab-content py-4">
+<div class="alert alert-primary alert-dismissable" *ngIf="showMsg">
+    <a class="panel-close close" data-dismiss="alert">×</a>Update Success! <strong>Changes are saved!</strong>
+</div>
 <form #f="ngForm" (ngSubmit)="updateProfile(f.value)">
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">First name</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="text" name="firstName"  [(ngModel)]="user.firstName" required #firstName="ngModel" 
-                                pattern="([a-zA-Z]){2,15}" [class.is-invalid]="firstName.invalid && firstName.touched">
-                                <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">First name requaire 2-15 characters</small>  
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Last name</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="text" name="lastName"  [(ngModel)]="user.lastName" required #lastName="ngModel" 
-                                pattern="([a-zA-Z]){2,15}" [class.is-invalid]="lastName.invalid && lastName.touched">
-                                <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Last name requaire 2-15 characters</small>  
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Email</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="email" name="email"  [(ngModel)]="user.email" 
-                                required #email="ngModel" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
-                                [class.is-invalid]="email.invalid && email.touched">
-                                <div *ngIf="email.errors && email.invalid && email.touched ">
-                                    <small class="text-danger" *ngIf="email.errors.required" [class.d-none]="email.valid || email.untouched">Email is required field</small>
-                                    <small class="text-danger" *ngIf="email.errors.pattern" [class.d-none]="email.valid || email.untouched">Enter the valid email</small>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label">Password</label>
-                            <div class="col-lg-9">
-                                <input class="form-control" type="{{showPass ? 'text' : 'password'}}" name="password"  [(ngModel)]="user.password"
-                                required #password="ngModel" [class.is-invalid]="password.invalid && password.touched" >
-                                <p id="togglePass" (click)="toggle()">{{showPass ? 'Hide' : 'Show'}}</p>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label class="col-lg-3 col-form-label form-control-label"></label>
-                            <div class="col-lg-9">
-                                <input type="reset" class="btn btn-secondary" value="Cancel">
-                                <input type="submit" class="btn btn-primary" value="Save Changes">
-                            </div>
-                        </div>
-                    </form>
+  <div class="form-group row">
+    <label class="col-lg-3 col-form-label form-control-label">First name</label>
+    <div class="col-lg-9">
+       <input class="form-control" type="text" name="firstName"  [(ngModel)]="user.firstName" required #firstName="ngModel" 
+       pattern="([a-zA-Z]){2,15}" [class.is-invalid]="firstName.invalid && firstName.touched">
+    <small class="text-danger" [class.d-none]="firstName.valid || firstName.untouched">First name requaire 2-15 characters</small>  
+  </div>
+  </div>
+    <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label">Last name</label>
+      <div class="col-lg-9">
+        <input class="form-control" type="text" name="lastName"  [(ngModel)]="user.lastName" required #lastName="ngModel" 
+          pattern="([a-zA-Z]){2,15}" [class.is-invalid]="lastName.invalid && lastName.touched">
+        <small class="text-danger" [class.d-none]="lastName.valid || lastName.untouched">Last name requaire 2-15 characters</small>  
+    </div>
+    </div>
+
+        <div class="form-group row">
+         <label class="col-lg-3 col-form-label form-control-label">Email</label>
+            <div class="col-lg-9">
+             <input class="form-control" type="email" name="email"  [(ngModel)]="user.email" 
+             required #email="ngModel" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"
+             [class.is-invalid]="email.invalid && email.touched">
+              <div *ngIf="email.errors && email.invalid && email.touched ">
+                <small class="text-danger" *ngIf="email.errors.required" [class.d-none]="email.valid || email.untouched">Email is required field</small>
+                <small class="text-danger" *ngIf="email.errors.pattern" [class.d-none]="email.valid || email.untouched">Enter the valid email</small>
+              </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-lg-3 col-form-label form-control-label">Password</label>
+         <div class="col-lg-9">
+            <input class="form-control" type="{{showPass ? 'text' : 'password'}}" name="password"  [(ngModel)]="user.password"
+             required #password="ngModel" [class.is-invalid]="password.invalid && password.touched" >
+            <p id="togglePass" (click)="toggle()">{{showPass ? 'Hide' : 'Show'}}</p>
+         </div>
+       </div>
+
+       <div class="form-group row">
+        <label class="col-lg-3 col-form-label form-control-label"></label>
+         <div class="col-lg-9">
+            <input type="reset" (click)="reset()" class="btn btn-secondary" value="Reset">
+            <input [disabled]="f.form.invalid || f.form.untouched" style="margin-left: 10px;" type="submit" class="btn btn-primary" value="Save Changes">
+        </div>
+  </div>
+</form>
+  </div>
+</div></div></div>

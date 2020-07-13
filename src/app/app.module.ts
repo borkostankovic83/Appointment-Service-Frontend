@@ -20,6 +20,10 @@ import { AdminDashboardComponent } from './components/admin-dashboard/admin-dash
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { VetDashboardComponent } from './components/vet-dashboard/vet-dashboard.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
+import { NavbarSubnavComponent } from './components/navbar-subnav/navbar-subnav.component';
+import { AppointmentsComponent } from './components/appointments/appointments.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +43,10 @@ import { EditUserComponent } from './components/edit-user/edit-user.component';
     UserDashboardComponent,
     VetDashboardComponent,
     EditUserComponent,
+    DashboardComponent,
+    ProfilePictureComponent,
+    NavbarSubnavComponent,
+    AppointmentsComponent,
   ],
   imports: [
     BrowserModule,

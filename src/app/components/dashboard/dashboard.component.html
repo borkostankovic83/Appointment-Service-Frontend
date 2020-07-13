@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="row my-2">
+        <div class="col-lg-4 text-center py-4">
+            <!-- profile pic load here from profile-picture component -->
+            <app-profile-picture></app-profile-picture>
+        </div>
+        <div class="col-lg-8 order-lg-2">
+            <app-navbar-subnav></app-navbar-subnav>
+            <div class="tab-content py-4">
+                
+             
+
+                <div class="tab-pane" id="messages">
+                    <div class="alert alert-info alert-dismissable">
+                        <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user.
+                    </div>
+                    
+                </div> 
+                <!-- Dashboard here load depends of user role-->
+                <div class="tab-pane" id="makeAppointment">
+                    
+                </div>
+
+                <!-- Make Appointment here load depends of user role-->
+                <div class="tab-pane" id="appointment">
+                    <app-appointments></app-appointments>
+                    <div *ngIf="user.role == ['Vet']"><app-vet-dashboard></app-vet-dashboard></div>
+                    <div *ngIf="user.role == ['User']"><app-user-dashboard></app-user-dashboard></div>
+                    <div *ngIf="user.role == ['Admin']"><app-admin-dashboard></app-admin-dashboard></div>
+                </div>
+
+     
+            </div>
+        </div>
+    </div>
+</div>
