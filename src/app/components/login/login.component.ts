@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   msg = '';
   user = new User();
   currentUser : any;
+  showPass: boolean;
 
   constructor(
     private router: Router,
@@ -26,6 +27,10 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(){
 
+  }
+  
+  toggle() {
+    this.showPass = !this.showPass;
   }
 
   loginUser(){

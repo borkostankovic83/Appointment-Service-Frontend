@@ -19,6 +19,7 @@ import { UserProfileComponent } from './components/user-profile/user-profile.com
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
 import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
 import { VetDashboardComponent } from './components/vet-dashboard/vet-dashboard.component';
+import { EditUserComponent } from './components/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { VetDashboardComponent } from './components/vet-dashboard/vet-dashboard.
     AdminDashboardComponent,
     UserDashboardComponent,
     VetDashboardComponent,
+    EditUserComponent,
   ],
   imports: [
     BrowserModule,

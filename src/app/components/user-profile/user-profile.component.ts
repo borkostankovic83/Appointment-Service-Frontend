@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class UserProfileComponent implements OnInit {
 
   user : any;
+  showPass: boolean;
 
   constructor(
     public currentUserService:CurrentUserService,
@@ -31,4 +32,8 @@ export class UserProfileComponent implements OnInit {
     this.router.navigate(['admin/dashboard']);
   }
   
+  toggle() {
+    this.showPass = !this.showPass;
+  }
+
 }

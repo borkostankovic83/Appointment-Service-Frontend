@@ -44,15 +44,17 @@
   
     <div class="form-group">
       <small><label>Password</label></small>
-      <input type="password" class="form-control" id="password" placeholder="Enter Password" name="password"
+      <input type="{{showPass2 ? 'text' : 'password'}}" class="form-control" id="password" placeholder="Enter Password" name="password"
       ngModel required #password="ngModel" [class.is-invalid]="password.invalid && password.touched" >
+      <p id="togglePass" (click)="toggle2()">{{showPass2 ? 'Hide' : 'Show'}}</p>
       <small class="text-danger" [class.d-none]="password.valid || password.untouched">Password is required field</small>
     </div>
   
     <div class="form-group">
       <small><label>Confirm Password</label></small>
-      <input type="password" class="form-control" id="cpassword" placeholder="Confirm Password" name="cpassword"
+      <input type="{{showPass ? 'text' : 'password'}}" class="form-control" id="cpassword" placeholder="Confirm Password" name="cpassword"
       ngModel required #cpassword="ngModel" [class.is-invalid]="cpassword.invalid && cpassword.touched" >
+      <p id="togglePass" (click)="toggle()">{{showPass ? 'Hide' : 'Show'}}</p>
       <small class="text-danger" [class.d-none]="(cpassword.value == password.value) || cpassword.untouched">Confirm password must match password</small>
     </div>
      

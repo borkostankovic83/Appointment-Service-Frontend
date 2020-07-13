@@ -14,6 +14,8 @@ export class RegisterComponent implements OnInit {
 
   showMsg: boolean = false;
   msg : any ='';
+  showPass: boolean;
+  showPass2: boolean;
 
   constructor(
     private httpClient:HttpClient,
@@ -21,6 +23,14 @@ export class RegisterComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
+  }
+  
+  toggle() {
+    this.showPass = !this.showPass;
+  }
+
+  toggle2() {
+    this.showPass2 = !this.showPass2;
   }
 
   registerUser(registerForm: NgForm){
