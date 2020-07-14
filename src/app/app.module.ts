@@ -24,6 +24,9 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { ProfilePictureComponent } from './components/profile-picture/profile-picture.component';
 import { NavbarSubnavComponent } from './components/navbar-subnav/navbar-subnav.component';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
+import { UserComponent } from './components/user/user.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { VetComponent } from './components/vet/vet.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +50,9 @@ import { AppointmentsComponent } from './components/appointments/appointments.co
     ProfilePictureComponent,
     NavbarSubnavComponent,
     AppointmentsComponent,
+    UserComponent,
+    AdminComponent,
+    VetComponent,
   ],
   imports: [
     BrowserModule,

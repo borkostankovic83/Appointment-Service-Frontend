@@ -4,9 +4,18 @@
     <li class="nav-item">
         <a data-target="#appointment" data-toggle="tab" class="nav-link active">Appointments</a>
     </li>
-    <li class="nav-item">
+    <li class="nav-item" *ngIf="user.role == ['Admin']">
         <a data-target="#messages" data-toggle="tab" class="nav-link ">Messages</a>
-    </li>  
+    </li> 
+    <li class="nav-item">
+        <a data-target="#users" data-toggle="tab" class="nav-link ">Users</a>
+    </li>
+    <li class="nav-item" *ngIf="user.role == ['Admin']">
+        <a data-target="#vets" data-toggle="tab" class="nav-link ">Vets</a>
+    </li>
+    <li class="nav-item" *ngIf="user.role == ['Admin']">
+        <a data-target="#admins" data-toggle="tab" class="nav-link ">Admins</a>
+    </li> 
     <li class="nav-item" *ngIf="user.role == ['User']">
         <a data-target="#makeAppointment" data-toggle="tab" class="nav-link">Make Appointment</a>
     </li>
