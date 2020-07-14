@@ -7,57 +7,7 @@
         <div class="col-lg-8 order-lg-2">
             <app-navbar-subnav></app-navbar-subnav>
             <div class="tab-content py-4">
-                
-             
-                <!-- Load Alersts -->
-                <div class="tab-pane" id="messages">
-                    <div class="alert alert-info alert-dismissable">
-                        <a class="panel-close close" data-dismiss="alert">×</a> This is an <strong>.alert</strong>. Use this to show important messages to the user.
-                    </div>
-                    
-                </div> 
-
-                <!-- Dashboard here load depends of user role-->
-                <div class="tab-pane" id="makeAppointment">
-                    
-                </div>
-
-                <!-- Dashboard here load depends of user role-->
-                <div class="tab-pane" id="appointmentSettings">
-                    <app-business-appointment-settings></app-business-appointment-settings>
-                </div>
-
-                <!-- Dashboard here load depends of user role-->
-                <div class="tab-pane" id="shedule">
-                    <app-business-schedule-display></app-business-schedule-display>
-                    <app-business-schedule-edition-daily></app-business-schedule-edition-daily>
-                    <app-business-schedule-edition-weekly></app-business-schedule-edition-weekly>
-                    
-                </div>
-
-                <!-- Make Appointment here load depends of user role-->
-                <div class="tab-pane" id="appointment">
-                    <app-appointments></app-appointments>
-                    <div *ngIf="user.role == ['Vet']"><app-vet-dashboard></app-vet-dashboard></div>
-                    <div *ngIf="user.role == ['User']"><app-user-dashboard></app-user-dashboard></div>
-                    <div *ngIf="user.role == ['Admin']"><app-admin-dashboard></app-admin-dashboard></div>
-                </div>
-
-                <!-- Dashboard load here all users-->
-                <div class="tab-pane" id="users">
-                    <app-user></app-user>
-                </div>
-
-                <!-- Dashboard load here all vets-->
-                <div class="tab-pane" id="vets">
-                    <app-vet></app-vet>
-                </div>
-
-                <!-- Dashboard load here all admins-->
-                <div class="tab-pane" id="admins">
-                    <app-admin></app-admin>
-                </div>
-     
+                <router-outlet></router-outlet>
             </div>
         </div>
     </div>

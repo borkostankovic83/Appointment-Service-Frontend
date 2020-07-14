@@ -28,6 +28,7 @@ export class VetComponent implements OnInit {
     this.httpClient.delete(environment.userUri + '/' + id)
     .subscribe(() => {
       console.log("User is Deleted");
+      this.getAllUsers();
     });
   }
 

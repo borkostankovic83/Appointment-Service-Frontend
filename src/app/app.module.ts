@@ -27,6 +27,9 @@ import { AppointmentsComponent } from './components/appointments/appointments.co
 import { UserComponent } from './components/user/user.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { VetComponent } from './components/vet/vet.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { MakeAppointmentComponent } from './components/make-appointment/make-appointment.component';
+import { AskQuestionComponent } from './components/ask-question/ask-question.component';
 
 @NgModule({
   declarations: [
@@ -53,6 +56,9 @@ import { VetComponent } from './components/vet/vet.component';
     UserComponent,
     AdminComponent,
     VetComponent,
+    MessagesComponent,
+    MakeAppointmentComponent,
+    AskQuestionComponent,
   ],
   imports: [
     BrowserModule,

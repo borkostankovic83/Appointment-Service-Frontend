@@ -10,12 +10,15 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGaurdService } from './services/auth-gaurd.service';
 import { UserProfileComponent } from './components/user-profile/user-profile.component';
 import { RoleGuardService } from './services/role-guard.service';
-import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
-import { UserDashboardComponent } from './components/user-dashboard/user-dashboard.component';
-import { VetDashboardComponent } from './components/vet-dashboard/vet-dashboard.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AppointmentsComponent } from './components/appointments/appointments.component';
 import { EditUserComponent } from './components/edit-user/edit-user.component';
+import { UserComponent } from './components/user/user.component';
+import { VetComponent } from './components/vet/vet.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { MakeAppointmentComponent } from './components/make-appointment/make-appointment.component';
+import { AskQuestionComponent } from './components/ask-question/ask-question.component';
 
 
 const routes: Routes = [
@@ -28,11 +31,23 @@ const routes: Routes = [
   {path:'appointmentSettings',component:BusinessAppointmentSettingsComponent},
   {path:'profile', component:UserProfileComponent, canActivate:[AuthGaurdService]},
   {path:'edit/profile', component:EditUserComponent, canActivate:[AuthGaurdService]},
-  {path:'dashboard', component:DashboardComponent, canActivate:[AuthGaurdService]},
+  {path:'dashboard', 
+  component:DashboardComponent, 
+  canActivate:[AuthGaurdService], 
+  children: [
+    {path:'', component:AppointmentsComponent},
+    {path:'appointments', component:AppointmentsComponent},
+    {path:'messages', component:MessagesComponent},
+    {path:'make-appointment', component:MakeAppointmentComponent},
+    {path:'ask', component:AskQuestionComponent},
+    {path:'schedule', component:BusinessScheduleDisplayComponent},
+    {path:'settings', component:BusinessAppointmentSettingsComponent},
+    {path:'users', component:UserComponent, canActivate:[RoleGuardService]},
+    {path:'vets', component:VetComponent, canActivate:[RoleGuardService]},
+    {path:'admins', component:AdminComponent, canActivate:[RoleGuardService]},
+  ]
+},
   {path:'make/appointmet', component:AppointmentsComponent, canActivate:[AuthGaurdService]},
-  // {path:'user/dashboard', component:UserDashboardComponent, canActivate:[AuthGaurdService]},
-  // {path:'vet/dashboard', component:VetDashboardComponent, canActivate:[AuthGaurdService]},
-  // {path:'admin/dashboard', component:AdminDashboardComponent, data:{role: 'Admin'}, canActivate:[RoleGuardService]},
   {path:'**',component:PageNotFoundComponent}  
 ];
 

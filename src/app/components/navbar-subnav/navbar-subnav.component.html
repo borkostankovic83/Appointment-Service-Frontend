@@ -2,31 +2,31 @@
     <ul class="nav nav-tabs">
    
     <li class="nav-item">
-        <a data-target="#appointment" data-toggle="tab" class="nav-link active">Appointments</a>
+        <a [routerLink]="['appointments']" data-toggle="tab" class="nav-link active">Appointments</a>
     </li>
     <li class="nav-item" *ngIf="user.role == ['Admin']">
-        <a data-target="#messages" data-toggle="tab" class="nav-link ">Messages</a>
+        <a [routerLink]="['messages']" data-toggle="tab" class="nav-link ">Messages</a>
     </li> 
-    <li class="nav-item">
-        <a data-target="#users" data-toggle="tab" class="nav-link ">Users</a>
+    <li class="nav-item" *ngIf="user.role == ['Admin']">
+        <a [routerLink]="['users']" data-toggle="tab" class="nav-link ">Users</a>
     </li>
     <li class="nav-item" *ngIf="user.role == ['Admin']">
-        <a data-target="#vets" data-toggle="tab" class="nav-link ">Vets</a>
+        <a [routerLink]="['vets']" data-toggle="tab" class="nav-link ">Vets</a>
     </li>
     <li class="nav-item" *ngIf="user.role == ['Admin']">
-        <a data-target="#admins" data-toggle="tab" class="nav-link ">Admins</a>
+        <a [routerLink]="['admins']" data-toggle="tab" class="nav-link ">Admins</a>
     </li> 
     <li class="nav-item" *ngIf="user.role == ['User']">
-        <a data-target="#makeAppointment" data-toggle="tab" class="nav-link">Make Appointment</a>
+        <a [routerLink]="['make-appointment']" data-toggle="tab" class="nav-link">Make Appointment</a>
     </li>
     <li class="nav-item">
-        <a data-target="#ask" *ngIf="user.role == ['User']" data-toggle="tab" class="nav-link ">Ask Question</a>
+        <a [routerLink]="['ask']" *ngIf="user.role == ['User']" data-toggle="tab" class="nav-link ">Ask Question</a>
     </li>
     <li class="nav-item">
-        <a data-target="#shedule" *ngIf="user.role == ['Vet']" data-toggle="tab" class="nav-link ">Shedule</a>
+        <a [routerLink]="['schedule']" *ngIf="user.role == ['Vet']" data-toggle="tab" class="nav-link ">Shedule</a>
     </li>
     <li class="nav-item">
-        <a data-target="#appointmentSettings" *ngIf="user.role == ['Vet']" data-toggle="tab" class="nav-link ">Settings</a>
+        <a [routerLink]="['settings']" *ngIf="user.role == ['Vet']" data-toggle="tab" class="nav-link ">Settings</a>
     </li>
  
 </ul>
