@@ -1,0 +1,32 @@
+export class AppointmentSettings {
+    appointment_maxDaysAhead_user_value : number;
+    appointment_duration_user_value : number;
+    monday_morning_schedule_begin:string;
+    monday_morning_schedule_end:string;
+    monday_afternoon_schedule_begin:string;
+    monday_afternoon_schedule_end:string;
+    tuesday_morning_schedule_begin:string;
+    tuesday_morning_schedule_end:string;
+    tuesday_afternoon_schedule_begin:string;
+    tuesday_afternoon_schedule_end:string;
+    wednesday_morning_schedule_begin:string;
+    wednesday_morning_schedule_end:string;
+    wednesday_afternoon_schedule_begin:string;
+    wednesday_afternoon_schedule_end:string;
+    thursday_morning_schedule_begin:string;
+    thursday_morning_schedule_end:string;
+    thursday_afternoon_schedule_begin:string;
+    thursday_afternoon_schedule_end:string;
+    friday_morning_schedule_begin:string;
+    friday_morning_schedule_end:string;
+    friday_afternoon_schedule_begin:string;
+    friday_afternoon_schedule_end:string;
+    saturday_morning_schedule_begin:string;
+    saturday_morning_schedule_end:string;
+    saturday_afternoon_schedule_begin:string;
+    saturday_afternoon_schedule_end:string;
+    sunday_morning_schedule_begin:string;
+    sunday_morning_schedule_end:string;
+    sunday_afternoon_schedule_begin:string;
+    sunday_afternoon_schedule_end:string;
+}

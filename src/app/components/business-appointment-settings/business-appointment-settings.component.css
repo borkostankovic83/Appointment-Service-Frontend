@@ -3,7 +3,7 @@
 }
 
 .setting-input{    
-    
+    margin-left: 2.5em;
 }
 
 .setting-day
@@ -12,9 +12,5 @@
     width: 8em;
     box-sizing: border-box;
     display: inline-block;
-}
-
-#Appointment_MaxDaysAhead{
-    
 }
 
