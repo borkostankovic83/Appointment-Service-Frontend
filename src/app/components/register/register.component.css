@@ -26,5 +26,13 @@
     height: 60px;
     width: auto;
 }
-
+#togglePass {
+  cursor: pointer;
+  color: lightslategray;
+  float: right;
+  padding-right: 33px;
+  margin-top: -31px;
+  position: relative;
+  z-index: 2;
+}
 
