@@ -30,6 +30,7 @@ import { VetComponent } from './components/vet/vet.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { MakeAppointmentComponent } from './components/make-appointment/make-appointment.component';
 import { AskQuestionComponent } from './components/ask-question/ask-question.component';
+import { AppointmentsUserComponent } from './components/appointments-user/appointments-user.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { AskQuestionComponent } from './components/ask-question/ask-question.com
     MessagesComponent,
     MakeAppointmentComponent,
     AskQuestionComponent,
+    AppointmentsUserComponent,
   ],
   imports: [
     BrowserModule,

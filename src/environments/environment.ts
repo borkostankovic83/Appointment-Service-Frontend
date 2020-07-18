@@ -11,6 +11,10 @@ export const environment = {
 
   userUri: `${baseUri}:${port}/users`,
 
+  petsUri: `${baseUri}:${port}/pets`,
+
+  appointmentsUri: `${baseUri}:${port}/appointments`,
+
   loginUri: `${baseUri}:${port}/login`,
 
   url: `${baseUri}:${port}`,

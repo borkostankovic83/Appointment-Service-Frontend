@@ -1,0 +1,9 @@
+<table class="table table-hover" *ngFor="let appointment of appointment">
+    <tbody>                                    
+        <tr>
+            <td *ngIf="user.id == appointment.user.id">
+               <span class="float-right font-weight-bold">{{appointment.appointmentDate}}</span>"{{appointment.appointmentStartTime}}" - {{appointment.pet.petName}} {{appointment.pet.petType}}
+            </td>
+        </tr>
+    </tbody> 
+</table>

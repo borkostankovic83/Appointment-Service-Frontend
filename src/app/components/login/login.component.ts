@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(){
-
   }
   
   toggle() {
@@ -36,7 +35,7 @@ export class LoginComponent implements OnInit {
   loginUser(){
     this.loginservice.loggin(this.user).subscribe(
       data => {
-        console.log("response recived"); 
+        console.log("response recived");
         this.router.navigate(['dashboard']);
       },
       error => {

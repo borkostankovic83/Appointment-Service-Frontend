@@ -19,6 +19,7 @@ import { AdminComponent } from './components/admin/admin.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { MakeAppointmentComponent } from './components/make-appointment/make-appointment.component';
 import { AskQuestionComponent } from './components/ask-question/ask-question.component';
+import { AppointmentsUserComponent } from './components/appointments-user/appointments-user.component';
 
 
 const routes: Routes = [
@@ -35,8 +36,9 @@ const routes: Routes = [
   component:DashboardComponent, 
   canActivate:[AuthGaurdService], 
   children: [
-    {path:'', component:AppointmentsComponent},
+    {path:'', component:MessagesComponent},
     {path:'appointments', component:AppointmentsComponent},
+    {path:'my/appointments', component:AppointmentsUserComponent},
     {path:'messages', component:MessagesComponent},
     {path:'make-appointment', component:MakeAppointmentComponent},
     {path:'ask', component:AskQuestionComponent},

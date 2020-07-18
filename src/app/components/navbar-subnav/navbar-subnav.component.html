@@ -1,12 +1,15 @@
 <div class="tab-content py-4">
     <ul class="nav nav-tabs">
-   
+
     <li class="nav-item">
-        <a [routerLink]="['appointments']" data-toggle="tab" class="nav-link active">Appointments</a>
-    </li>
-    <li class="nav-item" *ngIf="user.role == ['Admin']">
-        <a [routerLink]="['messages']" data-toggle="tab" class="nav-link ">Messages</a>
+        <a [routerLink]="['messages']" data-toggle="tab" class="nav-link active">Messages</a>
     </li> 
+    <li class="nav-item" >
+        <a [routerLink]="['my/appointments']" data-toggle="tab" class="nav-link">My Appointments</a>
+    </li>      
+    <li class="nav-item" *ngIf="user.role == ['Admin']">
+        <a [routerLink]="['appointments']" data-toggle="tab" class="nav-link">Appointments</a>
+    </li>
     <li class="nav-item" *ngIf="user.role == ['Admin']">
         <a [routerLink]="['users']" data-toggle="tab" class="nav-link ">Users</a>
     </li>
