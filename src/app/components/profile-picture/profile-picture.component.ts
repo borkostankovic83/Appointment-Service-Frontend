@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrentUserService } from 'src/app/services/current-user.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-profile-picture',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePictureComponent implements OnInit {
 
-  constructor() { }
+  constructor( 
+    currentUser:CurrentUserService,
+    httpClient:HttpClient,
+    ) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    
   }
+
+  
 
 }
