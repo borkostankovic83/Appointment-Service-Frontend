@@ -2,7 +2,12 @@
     <div class="row my-2">
         <div class="col-lg-4 text-center py-4">
             <!-- profile pic load here from profile-picture component -->
-            <app-profile-picture></app-profile-picture>
+            <img *ngIf="!retrievedImage" src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+            <img *ngIf="retrievedImage" [src]="retrievedImage"  (load)="getImage()" class="mx-auto img-fluid img-circle d-block" alt='Image Not Found'  />
+                <br><label class="custom-file">
+                  <span class="custom-file-control">Choose file</span>
+                <input type="file" (change)="onFileSelected($event)" id="file" class="custom-file-input">
+              </label>
         </div>
         <div class="col-lg-8 order-lg-2">
         <div class="tab-content py-4">
@@ -15,12 +20,12 @@
                 </div>
                 <div class="col-md-6" *ngFor="let pet of user.pet | keyvalue; let i = index">
                     <h3 class="alert alert-success" >Pet #{{i+1}} Info </h3>
-                    <div class="col-md-3" style="display:inline-block;float:left;">
+                    <div class="col-md-3" id="info">
                         <small >Name:<h5>{{user.pet[i].petName}}</h5></small>
                         <small>Type: <h5>{{user.pet[i].petType}}</h5></small>
                         <small>Breed: <h5>{{user.pet[i].breed}}</h5></small>
                     </div>
-                    <div class="col-md-3" style="display:inline-block;">
+                    <div class="col-md-3" id="info">
                         <small>Gender: <h5>{{user.pet[i].gender}}</h5></small>
                         <small>Age: <h5>{{user.pet[i].age}}</h5></small>
                     </div>

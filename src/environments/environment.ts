@@ -9,6 +9,8 @@ export const environment = {
   production: false,
   environmentName: 'Default Environment',
 
+  imageUri: `${baseUri}:${port}/image`,
+
   userUri: `${baseUri}:${port}/users`,
 
   petsUri: `${baseUri}:${port}/pets`,

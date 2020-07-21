@@ -3,7 +3,13 @@
     
 <div class="col-lg-4 text-center py-4">
   <!-- profile pic load here from profile-picture component -->
-  <app-profile-picture></app-profile-picture>
+  <img *ngIf="!retrievedImage" src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+<img *ngIf="retrievedImage" [src]="retrievedImage"  (load)="getImage()" class="mx-auto img-fluid img-circle d-block" alt='Image Not Found'  />
+    <label class="custom-file">
+      <br><span class="custom-file-control">Choose file</span>
+    <input type="file" (change)="onFileSelected($event)" id="file" class="custom-file-input">
+  
+</label>
 </div>
 
 <div class="col-lg-8 order-lg-2"> 

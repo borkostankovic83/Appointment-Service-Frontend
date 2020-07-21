@@ -1,6 +1,8 @@
-<img src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
-   <small class="mt-2">Upload a different photo</small>
+<img *ngIf="!retrievedImage" src="//placehold.it/150" class="mx-auto img-fluid img-circle d-block" alt="avatar">
+<img *ngIf="retrievedImage" [src]="retrievedImage"  (load)="getImage()" class="mx-auto img-fluid img-circle d-block" alt='Image Not Found'  />
+   <!-- <small class="mt-2">Upload a different photo</small> -->
     <label class="custom-file">
-    <input type="file" id="file" class="custom-file-input">
-  <span class="custom-file-control">Choose file</span>
+      <br><span class="custom-file-control" >Change photo</span>
+    <input type="file" (change)="onFileSelected($event)" id="file" class="custom-file-input">
+  
 </label>

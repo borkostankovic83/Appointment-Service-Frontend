@@ -1,0 +1,21 @@
+img {
+    height: 250px;
+    width: 250px;
+    border: 7px;
+    border-color: lightgray;
+    border-style: solid;
+    box-shadow: 15px 15px 15px 0 rgba(0,0,0,0.3);
+}
+
+.custom-file-control {
+    border: 1px solid gray;
+    border-radius: 10px;
+    padding: 8px;
+    box-shadow: 5px 5px 5px 0 rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+
+#info {
+    display:inline-block;
+    padding-bottom: 10px;
+}
